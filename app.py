@@ -22,13 +22,13 @@ def help(update: Update, context: CallbackContext):
     """)
 
 def userText(update: Update, context: CallbackContext):
-    update.message.reply_text("What {}? Do you work bro.".format(update.message.text))
+    update.message.reply_text("What {}? Do you work bitch.".format(update.message.text))
 
 def motivate_me(update: Update, context: CallbackContext):
-	update.message.reply_text("Do it, or I will shove it up on your ***")
+	update.message.reply_text("Do it, or I will shove it up on your ass")
 
 def how_do_look(update: Update, context: CallbackContext):
-	update.message.reply_text("You will never get a girlfriend")
+	update.message.reply_text("Ugly piece of shit, you will never get a girlfriend")
 
 
 def unknown_text(update: Update, context: CallbackContext):
