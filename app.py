@@ -1,3 +1,4 @@
+from turtle import update
 from telegram.ext.updater import Updater
 from telegram.update import Update
 from telegram.ext.callbackcontext import CallbackContext
@@ -11,15 +12,37 @@ BOT_USER_NAME = "ChipTradingBot"
 HEROKU_URL = "https://chip-trading-bot.herokuapp.com/"
 PORT = int(os.environ.get('PORT','8443'))
   
+watchlist = []
   
 def start(update: Update, context: CallbackContext):
-    update.message.reply_text("Why the hell did you come here? Don't you have other things to do? Type /help and get on with it")
+    update.message.reply_text("Hii, How are you doing? We are here to help you keep updated on your favourite stocks")
+    update.message.reply_text("🥳")
+    update.message.reply_text("/help for list of commands")
 
 def help(update: Update, context: CallbackContext):
 	update.message.reply_text("""Available Commands :-
+    /add_stock - Add a stock to your watchlist
     /motivate_me - get motivational quotes
     /how_do_i_look - get comments about yourself
     """)
+
+"""
+LIST OF COMMANDS
+1. Add to watchlist
+2. SET LIMIT ORDER UPDATE
+3. Alerts to TRACK ORDER (every minute)
+4. Change alert timings
+"""
+
+def add_stock():
+    update.message.reply_text("What stock do you want to add to your watchlist?")
+    watchlist.append(update.message.text)
+    update.message.reply_text("Stock added to watchlist")
+    update.message.reply_text("/watchlist to see your watchlist")
+
+def watchlist():
+    update.message.reply_text("Your watchlist is :-")
+    update.message.reply_text(watchlist)
 
 def userText(update: Update, context: CallbackContext):
     update.message.reply_text("What {}? Do you work bitch.".format(update.message.text))
